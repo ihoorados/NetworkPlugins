@@ -7,7 +7,7 @@
 
 import Foundation
 
-class URLSessionDataTaskService: CoreService {
+public class URLSessionDataTaskService: CoreService {
 
     /* ////////////////////////////////////////////////////////////////////// */
     // MARK: Dependency Injection
