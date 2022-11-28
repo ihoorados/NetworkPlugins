@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NetworkTools {
+public struct NetworkTools {
 
     // Model To Json (Dictionary)
     static func modelToJson<T: Codable>(model: T) -> [String: Any]?{

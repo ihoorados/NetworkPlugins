@@ -9,25 +9,29 @@ import Foundation
 
 public class URLSessionDataTaskService: CoreService {
 
-    /* ////////////////////////////////////////////////////////////////////// */
+    /* ------------------------------- */
     // MARK: Dependency Injection
-    /* ////////////////////////////////////////////////////////////////////// */
+    /* ------------------------------- */
 
     private var session : URLSession
-    private var tools: NetworkTools = NetworkTools()
 
     public init(session: URLSession = URLSession.shared) {
+
         self.session = session
     }
 
-    /* ////////////////////////////////////////////////////////////////////// */
-    // MARK: Methods
-    /* ////////////////////////////////////////////////////////////////////// */
+    /* ------------------------------- */
+    // MARK: Prpperties
+    /* ------------------------------- */
 
     private var task: URLSessionTask?
 
+    /* ------------------------------- */
+    // MARK: Functions
+    /* ------------------------------- */
+
     //MARK: Start Task
-    func request(endPoint: NetworkEndPoint, completion: @escaping response) {
+    public func request(endPoint: NetworkEndPoint, completion: @escaping response) {
 
         task = session.dataTask(with: endPoint.buildURLRequest(),
                                 completionHandler: { (data, response, error) in
@@ -43,7 +47,7 @@ public class URLSessionDataTaskService: CoreService {
         task?.resume()
     }
 
-    func cancelRequest() {
+    public func cancelRequest() {
         // MARK: Cancel Data Task
         task?.cancel()
     }
