@@ -18,7 +18,7 @@ public enum HttpMethod: String {
     case delete  = "DELETE"
 }
 
-protocol NetworkEndPoint {
+public protocol NetworkEndPoint {
 
     var path:       String             { get }
     var host:       String             { get }

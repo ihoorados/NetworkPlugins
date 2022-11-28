@@ -17,7 +17,7 @@ import Foundation
 /// - Parameters:
 ///     - endPoint: The *endPoint* Endpoint of the network.
 
-protocol CoreService {
+public protocol CoreService {
 
     typealias response = ((Swift.Result<(Data?, URLResponse?),Error>) -> Void)
 
