@@ -16,7 +16,7 @@ public class URLSessionDataTaskService: CoreService {
     private var session : URLSession
     private var tools: NetworkTools = NetworkTools()
 
-    init(session: URLSession = URLSession.shared) {
+    public init(session: URLSession = URLSession.shared) {
         self.session = session
     }
 
