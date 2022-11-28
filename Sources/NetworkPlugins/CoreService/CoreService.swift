@@ -8,8 +8,8 @@
 import Foundation
 
 
-/// The Core Service can make a request and also cancel the request and session.
-/// The Result we ecpect is Data or Error.
+/// The Core Service can make a single request and also cancel the request.
+/// The Result we expect: (Data, URLResponse) or Error.
 /// The Core Service should independ from the Fromework and use Swift Language feature so we can
 /// have multiple implementation from core service such as Alamofire and URLSession.
 ///
