@@ -7,9 +7,3 @@ public struct NetworkPlugins {
 }
 
 
-// MARK: Data Task Delegate
-protocol DataTaskDelegate: AnyObject {
-    typealias response = ((Result<Data,Error>) -> Void)
-    func startDataTask(_ request: URLRequest,completion: @escaping response)
-    func cancelDataTask()
-}
