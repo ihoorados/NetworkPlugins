@@ -19,7 +19,7 @@ import Foundation
 
 protocol CoreService {
 
-    typealias response = ((Swift.Result<(Data, URLResponse),Error>) -> Void)
+    typealias response = ((Swift.Result<(Data?, URLResponse?),Error>) -> Void)
 
     func request(endPoint: NetworkEndPoint,
                  completion: @escaping response)

@@ -23,8 +23,24 @@ protocol NetworkEndPoint {
     var path:       String             { get }
     var host:       String             { get }
     var scheme:     String             { get }
+    var url:        URL                { get }
     var method:     HttpMethod         { get }
-    var baseURL:    URL?               { get }
     var headers:    HttpHeaders        { get }
     var parameters: HttpParameters     { get }
+}
+extension NetworkEndPoint{
+
+    func buildURLRequest(with url: URL) -> URLRequest {
+
+        let request = URLRequest(url: url)
+        return request
+    }
+
+    func buildURLRequest() -> URLRequest {
+
+        var request = URLRequest(url: url)
+        request.httpMethod = self.method.rawValue
+        request.allHTTPHeaderFields = self.headers
+        return request
+    }
 }
