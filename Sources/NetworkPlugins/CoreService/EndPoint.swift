@@ -20,13 +20,13 @@ public enum HttpMethod: String {
 
 public protocol NetworkEndPoint {
 
-    var path:       String             { get }
-    var host:       String             { get }
-    var scheme:     String             { get }
-    var url:        URL                { get }
-    var method:     HttpMethod         { get }
-    var headers:    HttpHeaders        { get }
-    var parameters: HttpParameters     { get }
+    var path:       String             { get set }
+    var host:       String             { get set }
+    var scheme:     String             { get set }
+    var url:        URL                { get set }
+    var method:     HttpMethod         { get set }
+    var headers:    HttpHeaders        { get set }
+    var parameters: HttpParameters     { get set }
 }
 extension NetworkEndPoint{
 
